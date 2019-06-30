@@ -1,0 +1,7 @@
+[submodule "themes/hugo-natrium-theme"]
+	path = themes/hugo-natrium-theme
+	url = https://github.com/mobybit/hugo-natrium-theme
+[submodule "public"]
+	path = public
+	url = git@github.com:dawehner/dawehner.github.com.git
+	branch = master

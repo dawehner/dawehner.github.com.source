@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "APCU and some ramblings"
+date:   2016-07-13 00:00:00
+categories:
+  - php
+aliases:
+  - /php/2016/07/13/osx-apc.html
+---
+
+## Introduction to APCU
+
+One integral part of Drupal 8 is its quite aggressive caching. One subpart is the usage of APC(u) for caching things in the critical path of the 
+system. Let's first see what APC(u) is and then see some potential problems with it.
+
+Since PHP 5.6 we have an opcode cache built into PHP, so the previous package APC is not longer needed. There was a small component of APCU, which
+is basically a key value store shared between all instances of PHP on a single node. This shared memory model allowed really fast retrieval of
+information for common data of PHP applications. The problem is called [APCU](https://github.com/krakjoe/apcu).
+
+## Problems on concurrent requests
+
+Let's assume you work on a PHP application, with just one HTTP request and response. In this world data is simply written to APCU when needed.
+When you have multiple requests at the same time, things starts to become harder:
+Let's have a look at an example of a counter which is increased by one, in two processes at the same time.
+
+* Process A: Reads counter: 0
+* Process B: Reads counter: 0
+* Process A: Increments counter: 1
+* Process B: Increments counter: 1
+* Process A: Writes counter: 1
+* Process B: Writes counter: 1
+
+As you see, multiple processes acting together can be a problem.
+
+APCU has a counter increment/decrement build in: [apcu_inc](https://github.com/krakjoe/apcu/blob/b8c585a3af69d4151b9b53c1dbc81d9b637de6a1/php_apc.c#L547)
+and [apcu_dec](https://github.com/krakjoe/apcu/blob/b8c585a3af69d4151b9b53c1dbc81d9b637de6a1/php_apc.c#L581). Just by reading this code though its not
+obvious whether there is some lock protection, as [fast_long_add_function](https://github.com/php/php-src/blob/master/Zend/zend_operators.h#L521) boils
+down to some crazy assembler. Anyone knows more about it?
+
+## Problems on big sites
+
+Let's assume you work on an actual real live PHP application, which has multiple HTTP requests at the same time. For example you could have image
+on the site, which are generated/resized on the fly (Image styles called in Drupal). In this case you have multiple HTTP requests at the same time,
+all trying to write data to APCU at the same time. Two people have seen a deadlock now on a site with multiple images and media in the edit UI. All PHP processes started to block.
+
+In order to understand why this could be a problem we need to first understand how APCU stores its data internally.
+It separetes the memory in things called slots, per default 2000 of them. Each of those slots are filled up equally over time [source](https://github.com/krakjoe/apcu/blob/b8c585a3af69d4151b9b53c1dbc81d9b637de6a1/apc_cache.c#L342), by basically hashing the key of the insert, which should result in a equally distributed number. In order to find a cache entry, you again calculate the hash of the key,
+find its slot and then iterate over all slot entries to find the entry. As you could imagine the more entries you have, the slower it gets, as it takes time to iterate the single slot [source](https://github.com/krakjoe/apcu/blob/b8c585a3af69d4151b9b53c1dbc81d9b637de6a1/apc_cache.c#L449).
+
+When you now write the same key twice, for example after clearing the cache, you would like to avoid saving the same key twice. Therefore APCU sets a lock before writing the actual data. This though
+can lead to other problems, like [a deadlock](https://github.com/krakjoe/apcu/issues/86), when the underlying PHP process dies. The lock will stick around for a while. 
+
+In case you have a filled up cache, with a lot of fragmentation, this could also lead to a slow read and write process. 
+At some point memcache and even a database could be just faster, as they use a [hash table](https://en.wikipedia.org/wiki/Hash_table), which has on average a O(1) speed, as long they don't have hash collisions.
+Why does APCU not use a hash map? No idea, maybe you know? On top of that, APCU also seems not be able to store data at some point, as some people report on an [issue](https://github.com/krakjoe/apcu/issues/127).
+
+So questions I couldn't answer?
+
+* Where is this deadlock coming from?
+* Is APCU designed for the kind of data of Drupal (200k single entries) but also a lot of small entries (classloader entries)?
+* Is APCU fast enough (faster than other caching solutions (redis, memcache)) once you have a lot of entries in there?
+* Is the increment example from above atomic?
+* Why does APCU uses per default just 257, even it would support so much more?
+
+  [source 1](https://github.com/krakjoe/apcu/blob/b8c585a3af69d4151b9b53c1dbc81d9b637de6a1/apcue/apcue.c#L95) passes 10 as second parameter.
+  [source 2](https://github.com/krakjoe/apcu/blob/9cb0c427f3f79853ea3cb48999776e6209e5f601/apc_cache.c#L261) uses this number for calculating the amount of slots:
+  So this results in 257 slots by default.
+
+{{< highlight c >}}
+/* calculate number of slots */
+nslots = make_prime(size_hint > 0 ? size_hint : 2000);
+{{< / highlight >}}
+
+* Is APCU worth to use?
+* What kind of cache entries should be stored in APCU? Small ones, big ones, etc.?
+* This blog post is hard to understand? Please create issues and fork it: https://github.com/dawehner/dawehner.github.com
+* Please give feedback, or answer some of the questions below ...
+
+## Fix for the problem described above
+
+Actually as result I decided to disable APCU at least on my local machine due to the deadlock.
