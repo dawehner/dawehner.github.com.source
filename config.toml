@@ -1,4 +1,4 @@
-baseurl = "https://dawehner.github.io"
+baseurl = "https://dawehner.github.io/"
 languageCode = "en-us"
 title = "Daniel Wehner's blog"
 theme = "hugo-natrium-theme"
