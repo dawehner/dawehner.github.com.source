@@ -35,11 +35,11 @@ RSSLink = "feed.xml"
 [params]
     description = ""
 
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
+[params.logo]
+url = "logo.png"
+width = 50
+height = 50
+alt = "Logo"
 
 [outputs]
 home = [ "RSS", "HTML"]
