@@ -57,6 +57,8 @@ viewPodcasts podcasts =
                     { url = podcast.url
                     , label = E.text podcast.title
                     }
+                    |> List.singleton
+                    |> E.paragraph []
             )
             podcasts
 
@@ -84,13 +86,13 @@ view model =
                 (E.row [ E.padding 10, E.centerY, Font.color P.color.extraLink, E.spacing 10 ]
                     [ E.newTabLink
                         []
-                        { url = "https://github.com/dawehner/dawehner.github.com/tree/master/podcasts"
-                        , label = E.text "➾ Powered by elm"
+                        { url = "//dawehner.github.io"
+                        , label = E.text "➾ back to blog"
                         }
                     , E.newTabLink
                         []
-                        { url = "//dawehner.github.io"
-                        , label = E.text "➾ back to blog"
+                        { url = "https://github.com/dawehner/dawehner.github.com/tree/master/podcasts"
+                        , label = E.text "➾ Powered by elm"
                         }
                     ]
                 )

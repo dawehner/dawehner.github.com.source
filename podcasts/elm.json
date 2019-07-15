@@ -1,6 +1,5 @@
 {
     "type": "application",
-    "homepage": "https://dawehner.github.io/podcasts/build",
     "source-directories": [
         "src"
     ],
