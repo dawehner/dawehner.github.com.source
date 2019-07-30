@@ -33,7 +33,7 @@ RSSLink = "feed.xml"
 #     weight = -130
 
 [params]
-    description = ""
+  description = ""
 
 [params.logo]
 url = "logo.png"
@@ -42,7 +42,7 @@ height = 50
 alt = "Logo"
 
 [outputs]
-home = [ "RSS", "HTML"]
+home = ["RSS", "HTML"]
 
 [outputFormats]
 [outputFormats.RSS]
