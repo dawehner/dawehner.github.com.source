@@ -5,5 +5,5 @@ build-blog:
 build-podcasts:
 	cd podcasts && elm-app build
 
-deploy:
+deploy: build
 	nix-shell -p hugo --command './deploy.sh "deploy"'
