@@ -2,12 +2,23 @@
 
 <main class="content" role="main">
 
+  <h2>Blog posts</h2>
   <div class="list">
     {{ range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" }}
-    <h2 class="list-title">{{ .Key }}</h2>
-    {{ range .Pages }}
-    {{ partial "list-item.html" . }}
+      <h3 class="list-title">{{ .Key }}</h2>
+      {{ range .Pages }}
+        {{ partial "list-item.html" . }}
+      {{ end }}
     {{ end }}
+  </div>
+
+  <h2>Media</h2>
+  <div class="list">
+    {{ range (where site.RegularPages "Type" "book").GroupByDate "2006" }}
+      <h3 class="list-title">{{ .Key }}</h2>
+      {{ range .Pages }}
+        {{ partial "list-item.html" . }}
+      {{ end }}
     {{ end }}
   </div>
 
