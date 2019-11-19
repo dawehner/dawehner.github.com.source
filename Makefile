@@ -1,3 +1,4 @@
+all: build deploy
 build: build-blog build-podcasts
   
 build-blog:
