@@ -5,7 +5,7 @@ date = "2018-02-09"
 
 <section class="h-card">
   <p>
-    <a class="p-name u-url u-uid" href="https://daniel.town/about">Daniel Wehner</a>
+    <a class="p-name u-url u-uid" href="https://daniel.town">Daniel Wehner</a>
     <span>(<a class="u-pronoun" href="https://pronoun.is/he">he / him / his</a>)</span>
   </p>
   <p class="p-note">

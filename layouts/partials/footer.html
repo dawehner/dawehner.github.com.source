@@ -1,16 +1,28 @@
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml"><i class="fa fa-rss"></i> {{ i18n "footerRSS" }}</a>
-          </li>
-          <li>
-            <a href="https://github.com/dawehner" rel="me"><i class="fa fa-github"></i> Github</a>
-          </li>
-          <li>
-            <a href="https://twitter.com/da_wehner" rel="me"><i class="fa fa-twitter"></i> Twitter</a>
-          </li>
-        </ul>
-      </footer>
-    </div>
-  </body>
+<footer class="footer h-card">
+
+  <span>
+    <a class="p-name u-url u-uid" href="https://daniel.town">Daniel Wehner</a>
+    <span>(<a class="u-pronoun" href="https://pronoun.is/he">he / him / his</a>)</span>
+  </span>
+  <span class="p-note">
+    Engineer, <span class="p-category">runner</span>, <span class="p-category">climber</span>, <span
+      class="p-category">rower</span> in <span class="p-locality">London</span>
+  </span>
+
+  <ul class="footer-links">
+    <li>
+      <a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml"><i
+          class="fa fa-rss"></i> {{ i18n "footerRSS" }}</a>
+    </li>
+    <li>
+      <a class="u-url" rel="me" href="https://github.com/dawehner" rel="me"><i class="fa fa-github"></i> Github</a>
+    </li>
+    <li>
+      <a class="u-url" rel="me" href="https://twitter.com/da_wehner" rel="me"><i class="fa fa-twitter"></i> Twitter</a>
+    </li>
+  </ul>
+</footer>
+</div>
+</body>
+
 </html>
