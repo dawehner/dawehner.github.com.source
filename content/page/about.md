@@ -4,8 +4,9 @@ date = "2018-02-09"
 +++
 
 <section class="h-card">
-  <p class="p-name u-url u-uid" href="https://dawehner.github.io/about">
-    Daniel Wehner (<a class="u-pronoun" href="https://pronoun.is/he">he / him / his</a>)
+  <p>
+    <a class="p-name u-url u-uid" href="https://dawehner.github.io/about">Daniel Wehner</a>
+    <span>(<a class="u-pronoun" href="https://pronoun.is/he">he / him / his</a>)</span>
   </p>
   <p class="p-note">
     Engineer, <span class="p-category">runner</span>, <span class="p-category">climber</span>, <span class="p-category">rower</span> in <span class="p-locality">London</span>
