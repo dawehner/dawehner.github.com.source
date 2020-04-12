@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
@@ -16,6 +17,9 @@ if [ $# -eq 1 ]
   then msg="$1"
 fi
 git commit -m "$msg"
+
+git config user.email "dawehner@googlemail.com"
+git config user.name "Daniel Wehner"
 
 # Push source and build repos.
 git push origin master
