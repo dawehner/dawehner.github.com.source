@@ -1,10 +1,10 @@
-+++
-title = "Convert openssh key to RSA PEM"
-date = "2020-04-12"
-draft = false
+---
+title: "Convert openssh key to RSA PEM"
+date: "2020-04-12"
+draft: false
 categories:
   - ssh
-+++
+---
 
 {{< highlight bash >}}
 # Generate the ssh key

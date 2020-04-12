@@ -13,10 +13,11 @@ jobs:
         name: id_rsa
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
       
-    - uses: cachix/install-nix-action@v7
+    - name: Install nix
+      uses: cachix/install-nix-action@v7
 
-    - name: Cache Primes
-      id: cache-primes
+    - name: Cache Nix
+      id: cache-nix
       uses: actions/cache@v1
       with:
         path: cache-nix
