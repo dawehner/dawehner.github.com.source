@@ -11,6 +11,9 @@ cd public
 # Add changes to git.
 git add .
 
+git config user.email "dawehner@googlemail.com"
+git config user.name "Daniel Wehner"
+
 # Commit changes.
 msg="rebuilding site `date`"
 if [ $# -eq 1 ]
@@ -18,8 +21,6 @@ if [ $# -eq 1 ]
 fi
 git commit -m "$msg"
 
-git config user.email "dawehner@googlemail.com"
-git config user.name "Daniel Wehner"
 
 # Push source and build repos.
 git push origin master
