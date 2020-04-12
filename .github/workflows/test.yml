@@ -8,5 +8,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: cachix/install-nix-action@v7
-    - run: git submodule update --init && git submodule foreach git pull origin master && make deploy
+    - run: git submodule update --init
+    - uses: cachix/install-nix-action@v7
+    - run: git submodule foreach git pull origin master
+    - uses: cachix/install-nix-action@v7
+    - run: make deploy
 
