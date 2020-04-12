@@ -15,9 +15,8 @@ jobs:
 
 
     - uses: actions/checkout@v1
-    - uses: ubuntu-latest
-      run: git submodule update --init
-    - uses: ubuntu-latest
-      run: git submodule foreach git pull origin master
+    - run: git submodule update --init
+    - run: git submodule foreach git pull origin master
     - uses: cachix/install-nix-action@v7
+      name: Install nix
     - run: make deploy-action
