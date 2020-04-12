@@ -12,21 +12,12 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         name: id_rsa
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
-      
-    - name: Install nix
-      uses: cachix/install-nix-action@v7
 
-    - name: Cache Nix
-      id: cache-nix
-      uses: actions/cache@v1
-      with:
-        path: cache-nix
-        key: ${{ runner.os }}-nix
 
     - uses: actions/checkout@v1
-    - uses: cachix/install-nix-action@v7
-    - run: git submodule update --init
-    - uses: cachix/install-nix-action@v7
-    - run: git submodule foreach git pull origin master
+    - uses: ubuntu-latest
+      run: git submodule update --init
+    - uses: ubuntu-latest
+      run: git submodule foreach git pull origin master
     - uses: cachix/install-nix-action@v7
     - run: make deploy-action
