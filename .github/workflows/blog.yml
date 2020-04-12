@@ -1,4 +1,4 @@
-name: "Test"
+name: "Deploy blog"
 on:
   pull_request:
   push:
