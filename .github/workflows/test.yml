@@ -6,6 +6,17 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_KEY }}
+        name: id_rsa
+        known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
     - uses: actions/checkout@v2
+    - uses: cachix/install-nix-action@v7
+    - run: git submodule update --init
+    - uses: cachix/install-nix-action@v7
+    - run: git submodule foreach git pull origin master
     - uses: cachix/install-nix-action@v7
     - run: make deploy
