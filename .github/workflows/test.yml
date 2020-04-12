@@ -6,6 +6,12 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_KEY }}
+        known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
     - uses: actions/checkout@v2
     - uses: cachix/install-nix-action@v7
     - run: git submodule update --init
