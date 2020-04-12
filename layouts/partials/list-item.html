@@ -1,6 +1,6 @@
-    <nav class="list-item">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      <span class="list-item-date">
-        {{ .Date.Format "2006-01-02" }}
-      </span>
-    </nav>
+<article class="list-item" class="h-entry">
+  <a class="p-name e-content u-url" href="{{ .Permalink }}">{{ .Title }}</a>
+  <time class="list-item-date dt-published">
+    {{ .Date.Format "2006-01-02" }}
+  </time>
+</article>
