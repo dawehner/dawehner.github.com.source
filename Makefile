@@ -12,5 +12,8 @@ build-podcasts:
 deploy: build
 	nix-shell -p hugo --command './deploy.sh "deploy"'
 
+deploy-action: build-blog
+	nix-shell -p hugo --command './deploy.sh "deploy"'
+
 serve:
 	nix-shell -p hugo --command 'hugo server'
