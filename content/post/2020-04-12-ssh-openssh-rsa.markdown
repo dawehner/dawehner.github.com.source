@@ -9,6 +9,6 @@ categories:
 {{< highlight bash >}}
 # Generate the ssh key
 ssh-keygen -t rsa -b 4096 -f /tmp/key
-# Convert it to pem file
+# Convert it to a PEM file
 ssh-keygen -p -m PEM -f /tmp/key
 {{< / highlight >}}
