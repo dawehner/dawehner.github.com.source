@@ -26,7 +26,12 @@ RSSLink = "feed.xml"
 [[menu.main]]
     name = "Projects"
     url = "/projects"
-    weight = -120
+    weight = -100
+
+[[menu.main]]
+    name = "Media"
+    url = "/media"
+    weight = -100
 
 # [[menu.main]]
 #     name = "Categories"
