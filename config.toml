@@ -17,6 +17,7 @@ RSSLink = "feed.xml"
     post = "/:slug"
     book = "/books/:slug"
     page = "/:slug/"
+    shader = "/shaders/:slug"
 
 [[menu.main]]
     name = "About"
