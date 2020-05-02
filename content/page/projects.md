@@ -7,6 +7,7 @@ permalink: /projects/
 This page links and describes some of my personal projects.
 
 <ul>
+  <li>A list of <a href="https://daniel.town/shader/">GLSL (OpenGL Shading Language) experiments</a></li>
   <li>A simple <a href="https://electron.atom.io/">electron</a> based UI for <a href="https://https://tinypng.com/">tinypng</a> to make it easy to compress images: <a href="https://github.com/dawehner/tiny-ui">tiny-UI</a></li>
   <li>An vocabulary trainer app written in elm to procrastinate from learning vocabularies: <a href="https://github.com/dawehner/elm-vocab">elm-vocab</a></li>
   <li>Tool to automatically notify finished longruning process: <a href="https://github.com/dawehner/done">Done</a></li>
