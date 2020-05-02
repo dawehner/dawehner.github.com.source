@@ -1,13 +1,16 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: dawehner/dawehner.github.com.source
   branch: master
+  site_domain: wonderful-hamilton-dbd091.netlify.com
   # auth_endpoint: auth
   # api_root: https://api.github.com 
   # base_url: https://api.netlify.com
-  site_domain: wonderful-hamilton-dbd091.netlify.com
+
 publish_mode: editorial_workflow
 media_folder: "static/img/uploads"
 public_folder: "/img/uploads"
+
 collections:
   - name: "post"
     label: "Post" # Used in the UI
