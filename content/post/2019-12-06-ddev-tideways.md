@@ -1,8 +1,8 @@
-+++
-title = "Profiling PHP in ddev using tideways locally"
-date = "2019-12-06"
-draft = false
-+++
+---
+title: "Profiling PHP in ddev using tideways locally"
+date: "2019-12-06"
+draft: false
+---
 
 From time to time one runs into some performance problems, for example in PHP applications. The request might be slow or a batch process is leaking memory.
 
