@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Remove all merged local branches"
+title: "Remove all merged local branches"
 date:   2015-12-10 00:00:00
 categories:
   - git

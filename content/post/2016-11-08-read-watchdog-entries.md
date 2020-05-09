@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Make sense of your watchdog entries"
+title: "Make sense of your watchdog entries"
 date:   2016-01-08 00:00:00
 categories:
   - python

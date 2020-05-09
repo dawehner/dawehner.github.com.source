@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Create a PDF from a couple of images"
+title: "Create a PDF from a couple of images"
 date:   2016-01-11 00:00:00
 categories:
   - shell

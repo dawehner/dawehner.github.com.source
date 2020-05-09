@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Get notified on slow commands"
+title: "Get notified on slow commands"
 date:   2015-11-19 00:00:00
 categories:
   - fish

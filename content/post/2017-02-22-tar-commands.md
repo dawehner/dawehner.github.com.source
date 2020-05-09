@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Using tar the easy way"
+title: "Using tar the easy way"
 date:   2017-02-22 09:08:31
 comments : true
 categories:

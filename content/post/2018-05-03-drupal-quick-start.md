@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Quickstarting Drupal 8"
+title: "Quickstarting Drupal 8"
 date:   2018-05-03 00:00:00
 comments: true
 categories:

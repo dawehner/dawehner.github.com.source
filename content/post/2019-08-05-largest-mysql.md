@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Show largest mysql tables"
+title: "Show largest mysql tables"
 date:   2019-08-05 00:00:00
 comments: true
 published: true

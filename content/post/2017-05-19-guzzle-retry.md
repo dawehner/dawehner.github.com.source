@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Retry HTTP requests"
+title: "Retry HTTP requests"
 date:   2017-05-19 00:00:00
 comments: true
 categories: 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Pretty print your json"
+title: "Pretty print your json"
 date:   2015-10-18 09:08:31
 categories:
   - REST

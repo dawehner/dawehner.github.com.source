@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Extract a folder from a git repo into its own repo"
+title: "Extract a folder from a git repo into its own repo"
 date:   2016-01-18 00:00:00
 categories:
   - git

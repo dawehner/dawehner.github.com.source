@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Access inaccessible git commits"
+title: "Access inaccessible git commits"
 date:   2017-05-19 00:00:00
 comments: true
 categories:

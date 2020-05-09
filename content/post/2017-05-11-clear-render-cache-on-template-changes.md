@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Automatically clear the render cache when templates change"
+title: "Automatically clear the render cache when templates change"
 date:   2017-05-11 00:00:00
 comments: true
 categories:

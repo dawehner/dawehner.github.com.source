@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Seeing the screen in black and white"
+title: "Seeing the screen in black and white"
 date:   2019-02-10 00:00:00
 comments: true
 published: true

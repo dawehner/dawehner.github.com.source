@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Clone a non composer repo with composer"
+title: "Clone a non composer repo with composer"
 date:   2017-05-10 00:00:00
 comments: true
 categories:

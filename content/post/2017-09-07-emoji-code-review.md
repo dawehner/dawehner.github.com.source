@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Emoji code review"
+title: "Emoji code review"
 date:   2017-09-08 00:00:00
 comments: true
 categories:

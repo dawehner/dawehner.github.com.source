@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Realtime watchdog powered by PHP, Drupal and Elm"
+title: "Realtime watchdog powered by PHP, Drupal and Elm"
 date:   2017-10-10 00:00:00
 comments: true
 categories:

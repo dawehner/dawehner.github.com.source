@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Lua for all the things on your mac v1"
+title: "Lua for all the things on your mac v1"
 date:   2015-11-22 00:00:00
 categories:
   - automation
