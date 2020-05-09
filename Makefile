@@ -17,3 +17,4 @@ deploy-action: build-blog
 
 serve:
 	nix-shell -p hugo --command 'hugo server'
+
