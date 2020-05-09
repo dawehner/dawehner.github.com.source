@@ -41,7 +41,7 @@ in  { backend =
             , widget = "hidden"
             , default = "post"
             }
-          , DefaultField::{ label = "Title", name = "title", widget = "Text" }
+          , DefaultField::{ label = "Title", name = "title", widget = "string" }
           , DefaultField::{
             , label = "Publish Date"
             , name = "date"
