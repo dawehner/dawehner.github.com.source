@@ -1,5 +1,5 @@
 all: build deploy
-build: build-blog build-podcasts
+build: dhall-build build-blog build-podcasts
   
 build-blog:
 	nix-shell -p hugo --command hugo
@@ -18,3 +18,8 @@ deploy-action: build-blog
 serve:
 	nix-shell -p hugo --command 'hugo server'
 
+dhall-format:
+	nix-shell -p dhall --command 'dhall format --inplace config.dhall'
+
+dhall-build: dhall-format
+	nix-shell -p dhall-json remarshal --command 'dhall-to-json < config.dhall > config.json && json2toml -i config.json -o config.toml --preserve-key-order'

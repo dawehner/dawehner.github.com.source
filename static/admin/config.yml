@@ -37,6 +37,37 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
   - create: true
     fields:
+      - default: post
+        label: Layout
+        name: layout
+        required: true
+        widget: hidden
+      - default: ''
+        label: Title
+        name: title
+        required: true
+        widget: string
+      - default: ''
+        label: Publish Date
+        name: date
+        required: true
+        widget: datetime
+      - default: ''
+        label: Url
+        name: url
+        required: true
+        widget: string
+      - default: ''
+        label: Notes
+        name: body
+        required: true
+        widget: markdown
+    folder: content/link
+    label: Link
+    name: link
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  - create: true
+    fields:
       - default: book
         label: Layout
         name: layout

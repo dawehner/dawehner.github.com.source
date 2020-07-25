@@ -56,6 +56,32 @@ in  { backend =
           , DefaultField::{ label = "Body", name = "body", widget = "markdown" }
           ]
         }
+      , { name = "link"
+        , label = "Link"
+        , folder = "content/link"
+        , create = True
+        , slug = "{{year}}-{{month}}-{{day}}-{{slug}}"
+        , fields =
+          [ DefaultField::{
+            , label = "Layout"
+            , name = "layout"
+            , widget = "hidden"
+            , default = "post"
+            }
+          , DefaultField::{ label = "Title", name = "title", widget = "string" }
+          , DefaultField::{
+            , label = "Publish Date"
+            , name = "date"
+            , widget = "datetime"
+            }
+          , DefaultField::{ label = "Url", name = "url", widget = "string" }
+          , DefaultField::{
+            , label = "Notes"
+            , name = "body"
+            , widget = "markdown"
+            }
+          ]
+        }
       , { name = "book"
         , label = "Book"
         , folder = "content/media"

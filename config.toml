@@ -1,61 +1,64 @@
+RSSLink = "feed.xml"
 baseurl = "https://dawehner.github.io/"
 languageCode = "en-us"
-title = "Daniel Wehner's blog"
-theme = "hugo-natrium-theme"
-preserveTaxonomyNames = true
-rssLimit = 42
 paginate = 20
+preserveTaxonomyNames = true
 pygmentsCodefences = true
 pygmentsStyle = "native"
-RSSLink = "feed.xml"
+rssLimit = 42
+theme = "hugo-natrium-theme"
+title = "Daniel Wehner's blog"
 
-[taxonomies]
-    category = "categories"  
-    tag = "tags"
+[markup]
 
-[permalinks]
-    post = "/:slug"
-    book = "/books/:slug"
-    page = "/:slug/"
-    shader = "/shaders/:slug"
+[markup.goldmark]
 
-[[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = -110
-    
-[[menu.main]]
-    name = "Projects"
-    url = "/projects"
-    weight = -100
+[markup.goldmark.renderer]
+unsafe = true
+
+[menu]
 
 [[menu.main]]
-    name = "Media"
-    url = "/media"
-    weight = -100
+name = "About"
+url = "/about/"
+weight = -110
 
-# [[menu.main]]
-#     name = "Categories"
-#     url = "/categories"
-#     weight = -130
+[[menu.main]]
+name = "Projects"
+url = "/projects"
+weight = -100
 
-[params]
-  description = ""
-BooksSection = ["books"]
+[[menu.main]]
+name = "Media"
+url = "/media"
+weight = -100
 
-[params.logo]
-url = "logo.png"
-width = 50
-height = 50
-alt = "Logo"
+[outputFormats]
+
+[outputFormats.RSS]
+baseName = "feed"
+mediatype = "application/rss"
 
 [outputs]
 home = ["RSS", "HTML"]
 
-[outputFormats]
-[outputFormats.RSS]
-mediatype = "application/rss"
-baseName = "feed"
+[params]
+BooksSection = ["books"]
+description = ""
 
-[markup.goldmark.renderer]
-unsafe= true
+[params.logo]
+alt = "Logo"
+height = 50
+url = "logo.png"
+width = 50
+
+[permalinks]
+book = "/books/:slug"
+link = "/:slug"
+page = "/:slug/"
+post = "/:slug"
+shader = "/shaders/:slug"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
