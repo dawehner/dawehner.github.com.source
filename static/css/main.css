@@ -85,6 +85,10 @@ blockquote {
   position: relative;
 }
 
+.hidden {
+  display: hidden;
+}
+
 .header {
   padding: 20px 0;
   position: relative;
