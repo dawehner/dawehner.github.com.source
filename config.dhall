@@ -25,6 +25,7 @@
     { description = ""
     , BooksSection = [ "books" ]
     , logo = { url = "logo.png", width = 50, height = 50, alt = "Logo" }
+    , mainSections = [ "post", "book", "link", "shader" ]
     }
 , outputs.home = [ "RSS", "HTML" ]
 , outputFormats.RSS = { mediatype = "application/rss", baseName = "feed" }

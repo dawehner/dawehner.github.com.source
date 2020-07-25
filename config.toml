@@ -45,6 +45,7 @@ home = ["RSS", "HTML"]
 [params]
 BooksSection = ["books"]
 description = ""
+mainSections = ["post", "book", "link", "shader"]
 
 [params.logo]
 alt = "Logo"
