@@ -74,7 +74,7 @@ in  { backend =
             , name = "date"
             , widget = "datetime"
             }
-          , DefaultField::{ label = "Url", name = "url", widget = "string" }
+          , DefaultField::{ label = "Link URL", name = "link_url", widget = "string" }
           , DefaultField::{
             , label = "Notes"
             , name = "body"

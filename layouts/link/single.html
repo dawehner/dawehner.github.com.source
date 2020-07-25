@@ -10,9 +10,8 @@
     {{ end }}
 
     <div class="article-content e-content">
-
-      Link: <a href="https://{{ .Params.url }}">{{ .Params.url }}</a>
       {{ .Content }}
+      Link: <a href="https://{{ .Params.link_url }}">{{ .Params.link_url }}</a>
     </div>
 
     <ul class="article-taxonomy">
