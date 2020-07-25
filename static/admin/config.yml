@@ -53,8 +53,8 @@ collections:
         required: true
         widget: datetime
       - default: ''
-        label: Url
-        name: url
+        label: Link URL
+        name: link_url
         required: true
         widget: string
       - default: ''
