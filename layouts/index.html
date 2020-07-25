@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 <main class="content" role="main">
-  <h2>Posts</h2>
+  <h2>Welcome</h2>
   <div class="list">
     {{ range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" }}
     <h3 class="list-title">{{ .Key }}</h2>

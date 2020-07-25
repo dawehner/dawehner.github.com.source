@@ -240,11 +240,19 @@ blockquote {
   line-height: 1.3em;
 }
 
+h1 {
+  font-size: 48.83px;
+}
+
+h2 {
+  font-size: 39.06px;
+}
+
 .list-title,
 .category-title,
 .tag-cloud-title {
-  font-size: 32px;
-  margin-top: 60px;
+  font-size: 31.25px;
+  margin-top: var(--rth-1);
   padding-bottom: 10px;
 }
 
@@ -511,7 +519,7 @@ blockquote {
   .list-title,
   .category-title,
   .tag-cloud-title {
-    font-size: 38px;
+    font-size: var(--rth-3)
   }
 
   .list-item a {
@@ -549,4 +557,17 @@ blockquote {
   .error-page-title {
     font-size: 114px;
   }
+}
+
+:root {
+  --rth-0: 61.04px;
+  --rth-1: 48.83px;
+  --rth-2: 39.06px;
+  --rth-3: 31.25px;
+  --rth-4: 25.00px;
+  --rth-5: 20.00px;
+  --rth-6: 16px;
+  --rth-7: 12.8px;
+  --rth-8: 10.24px;
+  --rth-9: 8.19px;
 }
