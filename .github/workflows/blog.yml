@@ -19,4 +19,6 @@ jobs:
     - run: git submodule foreach git pull origin master
     - uses: cachix/install-nix-action@v12
       name: Install nix
+      with:
+        nix_path: nixpkgs=channel:nixos-20.09
     - run: make deploy-action
