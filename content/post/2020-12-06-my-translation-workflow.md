@@ -25,8 +25,8 @@ This way I can come back later and look at things like the frequency I search fo
 
 
 
-Feel free to download the alfred workflow and use it yourself / investigate how it works underneath the hood: <https://danie.town/static/Dict.cc.alfredworkflow>
+Feel free to download the alfred workflow and use it yourself / investigate how it works underneath the hood: <https://daniel.town/extra/Dict.cc.alfredworkflow>
 
 - - -
 
-Main image attribution: https://www.flickr.com/photos/zolakoma/
+Thumbnail image attribution: https://www.flickr.com/photos/zolakoma/
