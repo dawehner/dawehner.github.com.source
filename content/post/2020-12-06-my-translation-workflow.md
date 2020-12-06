@@ -16,10 +16,12 @@ You see: I can type in a word and retrieve a translation. It's using the service
 
 On top I also log the searched terms and chosen translations into a file:
 
-`source 1607253412 converter
+```
+source 1607253412 converter
 translation 1607253415 Umrichter
 source 1607253860 translation
-translation 1607253865 Parallelverschiebung`
+translation 1607253865 Parallelverschiebung
+```
 
 This way I can come back later and look at things like the frequency I search for terms
 
