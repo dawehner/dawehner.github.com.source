@@ -20,7 +20,9 @@ jobs:
     - name: Checkout submodules
       uses: textbook/git-checkout-submodule-action@master
     - name: Build container image
-      uses: docker/build-push-action@v2
+      uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        push: true
-        tags: dawehner/dawehner.github.com.source:latest
+        image: dawehner.github.com.source
+        registry: ghcr.io
+        username: dawehner
+        password: ${{ secrets.GITHUB_TOKEN }}
