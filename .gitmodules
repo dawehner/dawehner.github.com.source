@@ -3,5 +3,5 @@
 	url = https://github.com/mobybit/hugo-natrium-theme
 [submodule "public"]
 	path = public
-	url = https://github.com:dawehner/dawehner.github.com
+	url = https://github.com/dawehner/dawehner.github.com.git
 	branch = master
