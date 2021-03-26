@@ -2,7 +2,7 @@ name: "Deploy blog"
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build-blog:
     runs-on: ubuntu-latest
