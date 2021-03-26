@@ -5,6 +5,7 @@ RUN nix-channel --update
 
 COPY . /app
 WORKDIR /app
+ENV HUGO_BASEURL=https://daniel-town.k8s.daniel.town
 RUN nix-shell -p gnumake --command "make build-blog"
 
 FROM nginx:1.13.12-alpine
