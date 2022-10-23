@@ -23,6 +23,7 @@
             name = "daniel.town"; # our package name, irrelevant in this case
             src = ./.;
             buildPhase = ''
+              rm -rf themes
               mkdir -p themes
               ln -s ${inputs.theme} themes/hugo-natrium-theme
               ${pkgs.hugo}/bin/hugo --minify
