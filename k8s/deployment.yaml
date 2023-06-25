@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: daniel-town-deployment
+  labels:
+    app: daniel-town
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: daniel-town
+  template:
+    metadata:
+      labels:
+        app: daniel-town
+    spec:
+      containers:
+        - image: ghcr.io/dawehner/dawehner.github.com.source:latest
+          name: daniel-town
+          ports:
+            - containerPort: 80

@@ -1,0 +1,24 @@
+:q
+q
+:exit
+:exit
+exit
+ls
+exit
+                , name = "nginx"
+              [ kubernetes.Container::{
+            , containers =
+          , spec = Some kubernetes.PodSpec::{
+          , metadata = Some kubernetes.ObjectMeta::{ name = Some "nginx" }
+        , template = kubernetes.PodTemplateSpec::{
+        , replicas = Some +2
+          }
+          , matchLabels = Some (toMap { name = "nginx" })
+        , selector = kubernetes.LabelSelector::{
+      , spec = Some kubernetes.DeploymentSpec::{
+      , metadata = kubernetes.ObjectMeta::{ name = Some "nginx" }
+      kubernetes.Deployment::{
+let deployment =
+      https://raw.githubusercontent.com/dhall-lang/dhall-kubernetes/master/package.dhall sha256:532e110f424ea8a9f960a13b2ca54779ddcac5d5aa531f86d82f41f8f18d7ef1
+let kubernetes =
+:help

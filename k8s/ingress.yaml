@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: daniel-town 
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/issuer: "letsencrypt-prod"
+spec:
+  tls:
+    - hosts:
+      - daniel-town.k8s.daniel.town
+      secretName: daniel-town-tls
+  rules:
+  - host: daniel-town.k8s.daniel.town
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: daniel-town
+            port:
+              number: 80
+
