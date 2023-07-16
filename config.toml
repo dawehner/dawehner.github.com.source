@@ -1,5 +1,5 @@
 RSSLink = "feed.xml"
-baseurl = "https://dawehner.github.io/"
+baseurl = "https://daniel.town"
 languageCode = "en-us"
 paginate = 20
 preserveTaxonomyNames = true
