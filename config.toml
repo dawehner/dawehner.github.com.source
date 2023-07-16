@@ -23,6 +23,11 @@ url = "/projects"
 weight = -100
 
 [[menu.main]]
+name = "Boardgames"
+url = "/boardgame"
+weight = -100
+
+[[menu.main]]
 name = "Media"
 url = "/media"
 weight = -100
@@ -37,7 +42,7 @@ home = ["RSS", "HTML"]
 [params]
 BooksSection = ["books"]
 description = ""
-mainSections = ["post", "book", "link", "shader"]
+mainSections = ["post", "book", "link", "boardgame", "shader"]
 
 [params.logo]
 alt = "Logo"
@@ -46,6 +51,7 @@ url = "logo.png"
 width = 50
 
 [permalinks]
+boardgame = "/boardgame/:slug"
 book = "/books/:slug"
 link = "/:slug"
 page = "/:slug/"

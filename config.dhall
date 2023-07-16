@@ -12,6 +12,7 @@
 , permalinks =
   { post = "/:slug"
   , book = "/books/:slug"
+  , boardgame = "/boardgame/:slug"
   , link = "/:slug"
   , page = "/:slug/"
   , shader = "/shaders/:slug"
@@ -20,13 +21,14 @@
   =
   [ { name = "About", url = "/about/", weight = -110 }
   , { name = "Projects", url = "/projects", weight = -100 }
+  , { name = "Boardgames", url = "/boardgame", weight = -100 }
   , { name = "Media", url = "/media", weight = -100 }
   ]
 , params =
   { description = ""
   , BooksSection = [ "books" ]
   , logo = { url = "logo.png", width = 50, height = 50, alt = "Logo" }
-  , mainSections = [ "post", "book", "link", "shader" ]
+  , mainSections = [ "post", "book", "link", "boardgame", "shader" ]
   }
 , outputs.home = [ "RSS", "HTML" ]
 , outputFormats.RSS = { mediatype = "application/rss", baseName = "feed" }
