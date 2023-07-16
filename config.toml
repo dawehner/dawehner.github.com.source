@@ -9,14 +9,8 @@ rssLimit = 42
 theme = "hugo-natrium-theme"
 title = "Daniel Wehner's blog"
 
-[markup]
-
-[markup.goldmark]
-
 [markup.goldmark.renderer]
 unsafe = true
-
-[menu]
 
 [[menu.main]]
 name = "About"
@@ -32,8 +26,6 @@ weight = -100
 name = "Media"
 url = "/media"
 weight = -100
-
-[outputFormats]
 
 [outputFormats.RSS]
 baseName = "feed"

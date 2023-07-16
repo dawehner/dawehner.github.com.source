@@ -2,24 +2,27 @@ all: build deploy
 build: dhall-build build-blog build-podcasts
   
 build-blog:
-	nix-shell -p hugo --command hugo
+	nix shell nixpkgs#hugo --command hugo
 
 build-podcasts: export PUBLIC_URL = podcasts
 
 build-podcasts:
-	cd podcasts && npx elm-app build && cd .. && rm -Rf public/podcasts && mkdir -p public/podcasts && cp -r podcasts/build/* public/podcasts/
+	cd podcasts && nix run nixpkgs#elmPackages.create-elm-app build \
+	&& cd .. && rm -Rf public/podcasts && mkdir -p public/podcasts \
+	&& cp -r podcasts/build/* public/podcasts/
 
 deploy: build
-	nix-shell -p hugo --command './deploy.sh "deploy"'
+	nix shell nixpkgs#hugo --command ./deploy.sh "deploy"
 
 deploy-action: build-blog
-	nix-shell -p hugo --command './deploy.sh "deploy"'
+	nix shell nixpkgs#hugo --command ./deploy.sh "deploy"
 
 serve:
-	nix-shell -p hugo --command 'hugo server'
+	nix shell nixpkgs#hugo --command hugo server
 
 dhall-format:
-	nix-shell -p dhall --command 'dhall format --inplace config.dhall'
+	nix shell nixpkgs#dhall --command dhall format config.dhall
 
 dhall-build: dhall-format
-	nix-shell -p dhall-json remarshal --command 'dhall-to-json < config.dhall > config.json && json2toml -i config.json -o config.toml --preserve-key-order'
+	nix shell nixpkgs#dhall-json --command dhall-to-json < config.dhall > config.json \
+	&& nix shell nixpkgs#remarshal --command json2toml -i config.json -o config.toml --preserve-key-order

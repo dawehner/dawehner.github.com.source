@@ -1,1 +1,6 @@
 config.json
+# Devenv
+.devenv*
+devenv.local.nix
+
+.direnv
