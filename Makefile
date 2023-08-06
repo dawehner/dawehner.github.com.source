@@ -21,8 +21,8 @@ serve:
 	nix shell nixpkgs#hugo --command hugo server
 
 dhall-format:
-	nix shell nixpkgs#dhall --command dhall format config.dhall
+	nix shell nixpkgs#dhall --command dhall format hugo.dhall
 
 dhall-build: dhall-format
-	nix shell nixpkgs#dhall-json --command dhall-to-json < config.dhall > config.json \
-	&& nix shell nixpkgs#remarshal --command json2toml -i config.json -o config.toml --preserve-key-order
+	nix shell nixpkgs#dhall-json --command dhall-to-json < hugo.dhall > hugo.json \
+	&& nix shell nixpkgs#remarshal --command json2toml -i hugo.json -o config.toml --preserve-key-order
