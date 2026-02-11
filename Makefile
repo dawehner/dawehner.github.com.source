@@ -25,4 +25,4 @@ dhall-format:
 
 dhall-build: dhall-format
 	nix shell nixpkgs#dhall-json --command dhall-to-json < hugo.dhall > hugo.json \
-	&& nix shell nixpkgs#remarshal --command json2toml -i hugo.json -o config.toml --preserve-key-order
+	&& nix shell nixpkgs#remarshal --command json2toml -i hugo.json -o config.toml
