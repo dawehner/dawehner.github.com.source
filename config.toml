@@ -1,7 +1,8 @@
 RSSLink = "feed.xml"
 baseurl = "https://daniel.town/"
 languageCode = "en-us"
-paginate = 20
+[pagination]
+pagerSize = 20
 preserveTaxonomyNames = true
 pygmentsCodefences = true
 pygmentsStyle = "native"
