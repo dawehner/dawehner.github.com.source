@@ -5,7 +5,6 @@ preserveTaxonomyNames = true
 pygmentsCodefences = true
 pygmentsStyle = "native"
 rssLimit = 42
-theme = "hugo-natrium-theme"
 title = "Daniel Wehner's blog"
 
 [pagination]

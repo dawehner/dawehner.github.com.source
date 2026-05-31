@@ -1,10 +1,9 @@
 { baseurl = "https://daniel.town/"
-, languageCode = "en-us"
+, locale = "en-us"
 , title = "Daniel Wehner's blog"
-, theme = "hugo-natrium-theme"
 , preserveTaxonomyNames = True
 , rssLimit = 42
-, paginate = 20
+, pagination.paginate = 20
 , pygmentsCodefences = True
 , pygmentsStyle = "native"
 , RSSLink = "feed.xml"
