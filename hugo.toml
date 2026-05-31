@@ -1,13 +1,15 @@
 RSSLink = "feed.xml"
 baseurl = "https://daniel.town/"
 languageCode = "en-us"
-paginate = 20
 preserveTaxonomyNames = true
 pygmentsCodefences = true
 pygmentsStyle = "native"
 rssLimit = 42
 theme = "hugo-natrium-theme"
 title = "Daniel Wehner's blog"
+
+[pagination]
+pagerSize = 20
 
 [markup.goldmark.renderer]
 unsafe = true
