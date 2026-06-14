@@ -19,11 +19,14 @@ msg="rebuilding site `date`"
 if [ $# -eq 1 ]
   then msg="$1"
 fi
-git commit -m "$msg"
 
-
-# Push source and build repos.
-git push -f origin HEAD:master
+if git diff --cached --quiet; then
+  echo "No changes to commit, skipping."
+else
+  git commit -m "$msg"
+  # Push source and build repos.
+  git push -f origin HEAD:master
+fi
 
 # Come Back up to the Project Root
 cd ..

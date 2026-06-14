@@ -1,14 +1,11 @@
 RSSLink = "feed.xml"
 baseurl = "https://daniel.town/"
-languageCode = "en-us"
+locale = "en-us"
 preserveTaxonomyNames = true
 pygmentsCodefences = true
 pygmentsStyle = "native"
 rssLimit = 42
 title = "Daniel Wehner's blog"
-
-[pagination]
-pagerSize = 20
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -39,6 +36,9 @@ mediatype = "application/rss"
 
 [outputs]
 home = ["RSS", "HTML"]
+
+[pagination]
+paginate = 20
 
 [params]
 BooksSection = ["books"]
